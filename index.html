@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/styleapi.css"/>
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+<link rel="stylesheet" type="text/css" href="lib/cm2/lib/codemirror.css"/>
+<link rel="stylesheet" type="text/css" href="lib/jqui/css/custom-theme/jquery-ui-1.8.18.custom.css"/>
+
+
+<script type="text/javascript" src="lib/goog/base.js"></script>
+<script type="text/javascript" src="lib/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="lib/jqui/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script type="text/javascript" src="lib/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="lib/cm2/lib/codemirror.js"></script>
+<script type="text/javascript" src="lib/cm2/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="lib/uglify-js/lib/parse-js.js"></script>
+
+
+<script type="text/javascript" src="lib/b2d/Box2dWeb-2.1.a.3.js"></script>
+<script type="text/javascript" src="other.js"></script>
+
+
+<script type="text/javascript" src="draw/entity.js"></script>
+<script type="text/javascript" src="draw/entityManager.js"></script>
+<script type="text/javascript" src="draw/sprite.js"></script>
+<script type="text/javascript" src="draw/physsprite.js"></script>
+<script type="text/javascript" src="draw/line.js"></script>
+<script type="text/javascript" src="game/crate.js"></script>
+<script type="text/javascript" src="game/cabbage.js"></script>
+<script type="text/javascript" src="draw/comrade.js"></script>
+<script type="text/javascript" src="game/region.js"></script>
+
+<script type="text/javascript" src="game/stage.js"></script>
+
+<script type="text/javascript" src="edit/apiref.js"></script>
+<script type="text/javascript" src="edit/stageref.js"></script>
+<script type="text/javascript" src="edit/editor.js"></script>
+
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="game/wall.js"></script>
+<title>Comrade Code</title>
+</head>
+<body>
+<div id="apiref">
+	<h1 class="title">API Reference</h1>
+	<div id="apireflist">
+	</div>
+</div>
+<div id="stageref">
+	<div class="title">Stage Reference</div>
+	<div id="stagereflist">
+	</div>
+</div>
+<div id="comradebubble"></div>
+<div id="buttons">
+	<div class="button" id="pause" onclick="__glob.onPauseButton();"><img src="media/site/pause.png"></img></div>
+	<div class="button" id="reset" onclick="__glob.onReset();"><img src="media/site/reset.png"></img></div>
+	<a class="button" id="save" onclick="__glob.editor.save();">Save</a>
+</div>
+<img id="logo2" src="media/site/hammerandscicle.png"></img>
+<div id="container">
+
+	<canvas id="canvas" style="">
+	Your browser does not support the canvas element, please update your browser.
+	</canvas>
+	
+	<form id="editorcontainer">
+		<div id="editor">
+			<div id="prearea"></div>
+			<br/>
+			<textarea id="textarea" ></textarea>
+			<div id="postarea">}</div>
+		</div>
+		<br/>
+	</form>
+</div>
+<div id="errdialog" title="Error"></div>
+<div id="confirmdialog" title="Are you sure?"></div>
+</body>
+</html>

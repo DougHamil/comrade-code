@@ -1,0 +1,137 @@
+
+body {
+	background-color:#200;
+	background-image: url("bgstripe.png");
+	-moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none; 
+    -o-user-select: none;
+}
+
+#logo {
+	position:absolute;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+}
+
+#logo2 {
+	position:fixed;
+	z-index:-1;
+}
+
+#container {
+	margin-left:auto;
+	margin-right:auto;
+	width:850px;
+	padding:25px;
+	background-color:#300;
+	border-radius:10px;
+	overflow:hidden;
+	box-shadow:0 0 100px #000;
+	overflow:visible;
+}
+
+#editorcontainer {
+	display:block;
+	padding:5px;
+	margin:0px;
+	border-radius:10px;
+	background-color:#b73;
+  	line-height: 1em;
+  	font-family: monospace;
+  	font-size:32px;
+  	color:#620;
+}
+
+#editor #prearea {
+	float:left;
+}
+
+#buttons{
+	position:fixed;
+	margin:0;
+	padding:0;
+}
+
+.button {
+	display:block;
+	position:relative;
+	font-family: "Trebuchet MS",sans-serif;
+
+	font-size:24px;
+	text-align:center;
+	width:32px;
+	height:32px;
+	padding:20px;
+	margin:10px;
+	color:#FFF;
+	border-radius:20px;
+	border-width:2px;
+	border-style:solid;
+	box-shadow:4px 4px 10px #000;
+	-moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none; 
+    -o-user-select: none; 
+	cursor:pointer;
+	z-index:20;
+	display:block;
+	float:left;
+	
+}
+#pause img, #reset img {
+	width:32px;
+	height:32px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#save.run 			{ background-image:-webkit-gradient(linear, left top, left bottom, from(#0A0), to(#050)); }
+#save.run:hover		{ background-image:-webkit-gradient(linear, left top, left bottom, from(#0C0), to(#070)); }
+#save.run:active	{ background-image:-webkit-gradient(linear, left top, left bottom, from(#050), to(#0A0)); }
+#save 				{ background-image:-webkit-gradient(linear, left top, left bottom, from(#00A), to(#005)); width:100px; line-height:32px;}
+#save:hover			{ background-image:-webkit-gradient(linear, left top, left bottom, from(#00C), to(#007)); }
+#save:active		{ background-image:-webkit-gradient(linear, left top, left bottom, from(#005), to(#00A)); }
+
+#pause.play 		{ background-image:-webkit-gradient(linear, left top, left bottom, from(#070), to(#020)); }
+#pause.play:hover	{ background-image:-webkit-gradient(linear, left top, left bottom, from(#090), to(#040)); }
+#pause.play:active	{ background-image:-webkit-gradient(linear, left top, left bottom, from(#020), to(#070)); }
+#pause 				{ background-image:-webkit-gradient(linear, left top, left bottom, from(#500), to(#200)); }
+#pause:hover		{ background-image:-webkit-gradient(linear, left top, left bottom, from(#800), to(#500)); }
+#pause:active		{ background-image:-webkit-gradient(linear, left top, left bottom, from(#200), to(#500)); }
+
+#reset 				{ background-image:-webkit-gradient(linear, left top, left bottom, from(#B73), to(#830)); }
+#reset:hover		{ background-image:-webkit-gradient(linear, left top, left bottom, from(#DA7), to(#951)); }
+#reset:active		{ background-image:-webkit-gradient(linear, left top, left bottom, from(#830), to(#B73)); }
+
+#canvas {
+	margin:0 0 10px 0;
+	padding:0;
+	border-color:#b73;
+	border-width:3px;
+	border-style:dashed;
+}
+
+#comradebubble {
+	font-family:"Trebuchet MS",sans-serif;
+	background-color:#FFF;
+	color:#000;
+	border-radius:20px;
+	border-width:0;
+	margin:0;
+	padding:20px;
+	text-align:left;
+	font-size:24px;
+	font-weight:bold;
+	position:absolute;
+	cursor:pointer;
+	z-index:19;
+}
+
+.CodeMirror {
+  	line-height: 1em;
+  	font-family: monospace;
+  	font-size:32px;
+	background-color:#FFF;
+}
