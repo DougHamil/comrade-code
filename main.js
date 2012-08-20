@@ -7,6 +7,7 @@ var __glob = {
 	FRAME_TIME_SEC:1/60,
 	FRAME_TIME_MS:1/60*1000,
 	INITIAL_STAGE:'Stage0',
+	ENABLE_DEBUG_DRAW:false,
 	nextGUID:0,
 	canvas:null,
 	ctx:null,
@@ -249,7 +250,9 @@ function __doFrame(){
 	__glob.ctx.clearRect(0, 0, __glob.canvas.width, __glob.canvas.height);
 	__glob.entityManager.draw();
 	
-	__glob.physWorld.DrawDebugData();
+	if(__glob.ENABLE_DEBUG_DRAW)
+		__glob.physWorld.DrawDebugData();
+
 	__glob.physWorld.ClearForces();
 	
 	requestAnimFrame(__doFrame);

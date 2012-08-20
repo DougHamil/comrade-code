@@ -21,15 +21,14 @@ ccode.game.Stage0.prototype.create = function(entMan){
 	// TEMP: Add some entities
 	
 	console.log(__glob.canvas.width);
-	var region = new ccode.game.Region(__glob.canvas.width/2,0,__glob.canvas.width,200, this, function(other){
+	var region = new ccode.game.Region(-10,0,__glob.canvas.width+20, 200,{filled:true,fillStyle:'red'}, this, function(other){
 		console.log("Region was hit by ");
 		console.log(other);
 		console.log(region);
+		entMan.removeEntity(region);
 		region.destroy();
 	});
-
-	var line = new ccode.draw.Line(0, 200, __glob.canvas.width, 200, "black");
-	entMan.addEntity(line);
+	entMan.addEntity(region);
 
 	for(var i = 0; i < 3; i++)
 	{
