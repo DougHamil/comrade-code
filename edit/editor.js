@@ -9,7 +9,7 @@ CONST(this,'SANITIZE_BLACKLIST',[
 	'__parser',
 	'SCALE',
 	'document',
-	'window',
+	//'window',
 	'prototype',
 	'localStorage',
 	'eval',
@@ -151,29 +151,26 @@ ccode.edit.Editor.prototype.markText = function(from,to,className){
  */
 ccode.edit.Editor.prototype.setFunction = function(fun) {
 
-
-if(this.CLASS_WIDE_FUNCTION) {											// If true, the function set will be applied to all objects of the class.
-	function recFindAndSet(obj,name,fun)
-	{
-		// Do we have a proto and was it not found in that proto?
-		if(obj.__proto__ && !recFindAndSet(obj.__proto__,name,fun)) {
-			if(obj[name])
-			{
-				obj[name] = fun;
-				return true;
+	if(this.CLASS_WIDE_FUNCTION) {	// If true, the function set will be applied to all objects of the class.
+		function recFindAndSet(obj,name,fun)
+		{
+			// Do we have a proto and was it not found in that proto?
+			if(obj.__proto__ && !recFindAndSet(obj.__proto__,name,fun)) {
+				if(obj[name])
+				{
+					obj[name] = fun;
+					return true;
+				}
 			}
+			return false;
 		}
-		return false;
+
+		recFindAndSet(this.targetObject, this.targetFunction, fun);
+	} else {
+
+		if(this.targetObject != undefined && this.targetFunction != undefined)
+			this.targetObject[this.targetFunction] = fun;
 	}
-
-	recFindAndSet(this.targetObject, this.targetFunction, fun);
-} else {
-
-	if(this.targetObject != undefined && this.targetFunction != undefined)
-		this.targetObject[this.targetFunction] = fun;
-}
-
-	
 };
 
 
@@ -181,7 +178,9 @@ if(this.CLASS_WIDE_FUNCTION) {											// If true, the function set will be ap
  * Sanitize the current codeMirror text
  */
 ccode.edit.Editor.prototype.save = function(skipRun) {
-this.storeFunctions();
+	$.noty.clearQueue();
+	$.noty.closeAll();
+	this.storeFunctions();
 	// If code is sanitary...
 	if(this.doSanitize(this.codeMirror.getValue())) {
 		// We need to store the function code locally
@@ -200,14 +199,12 @@ this.storeFunctions();
 			
 			// Now drop out of the function
 			this.setTargetFunction(undefined);
-		}else if(!skipRun)
-		{
-			try{
+		} else if(!skipRun) {
+			try {
 				this.__tempFunc.call(this.stageref.stage);
-			}catch(err){
-				this.errdialog.attr('title','Error');
-				this.errdialog.html('<p>'+err.toString()+'</p>');
-				this.errdialog.dialog('open');
+			} catch(err){
+				var note = noty({text:'Error:'+err.toString(), timeout:false, layout:'bottom',type:'error'});
+				note.$bar.addClass('highlighttext');
 			}
 		}
 	}

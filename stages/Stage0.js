@@ -18,9 +18,6 @@ ccode.game.Stage0 = function() {
 goog.inherits(ccode.game.Stage0, ccode.game.Stage);
 
 ccode.game.Stage0.prototype.create = function(entMan){
-	// TEMP: Add some entities
-	
-	console.log(__glob.canvas.width);
 	var region = new ccode.game.Region(-10,0,__glob.canvas.width+20, 200,{filled:true,fillStyle:'red'}, this, function(other){
 		console.log("Region was hit by ");
 		console.log(other);

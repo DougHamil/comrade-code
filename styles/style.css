@@ -3,9 +3,9 @@ body {
 	background-color:#200;
 	background-image: url("bgstripe.png");
 	-moz-user-select: none; 
-    -khtml-user-select: none; 
-    -webkit-user-select: none; 
-    -o-user-select: none;
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
 }
 
 #logo {
@@ -51,6 +51,18 @@ body {
 	position:fixed;
 	margin:0;
 	padding:0;
+}
+
+#messagequeue {
+	display:block;
+	position:absolute;
+	font-family:"Trebuchet MS", sans-serif;	
+	font-size:24px;
+	text-align:center;
+	width:300px;
+	height:100%;
+	padding:20px;
+	border-radius:20px;
 }
 
 .button {
