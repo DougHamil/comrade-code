@@ -1,0 +1,10 @@
+Comrade Code
+--------------------
+
+Comrade Code is a simple game that teaches players the basics of programming by guiding the player
+through small tasks that involve JavaScript programming.
+
+Level 0 - UI Introduction
+-------------------------
+This first level covers the basics of the UI and teaches the player how to get around the Comrade Code
+interface.
