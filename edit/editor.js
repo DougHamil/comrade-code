@@ -60,7 +60,6 @@ ccode.edit.Editor = function(elid){
 	this.setTargetObject(undefined);
 };
 
-
 ccode.edit.Editor.prototype.storeFunctions = function(){
 	// Go through each object on the stage
 	var objs = this.stageref.getStageObjects();
